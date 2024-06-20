@@ -43,7 +43,7 @@ drop database swiggy;
 DELETE FROM customers;   --THIS DOES NOT DELET ID CURRENT STATUS START FROM LAST STATUS  
 TRUNCATE TABLE customers; --THIS  DELET ID CURRENT STATUS START FROM AGAIN ZERO OR INITIAL STATE DROP(STRUCTURE , RELENTION SHIP,ACCESS PRIVILAGE)
 
-
+--rename table name
 EXEC sp_rename customers,UP_customers;
 EXEC sp_rename UP_customers,customers;
 

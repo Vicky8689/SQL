@@ -1,14 +1,17 @@
 /* DML */
 use swiggy;
 
-
 select * from customers;
 
+select distinct name from customers; 
 
 insert into customers(name,state,city,zipcode)
 values
-('hemant','maharstra','mumbai',400043);
-
+('sachin','banarash','mumbai',400043),
+('vicky','up','mumbai',400043),
+('mukseh','maharstra','mumbai',400043),
+('rahul','up','mumbai',400043),
+('akib','mp','mumbai',400043);
 
 insert into customers
 values
@@ -41,21 +44,21 @@ WHERE id = 9;
 
 DELETE FROM customers; --DELET ALL THE ROW
 
-
+alter table customers
+drop column contact;
 
 /*CLAUSES*/
 
 --ORDER BY
 
 SELECT id,name FROM customers ;
-SELECT id,name FROM customers ORDER BY name ASC;
+SELECT distinct name,id FROM customers ORDER BY name ASC;
 SELECT id,name FROM customers ORDER BY name DESC;
 
-SELECT * FROM customers 
-ORDER BY name ,id ASC;    --ERROE
+
 
 SELECT * FROM customers 
-ORDER BY CASE WHEN name  ='ROHAN' THEN 1 ELSE 2 END;  --CIRCLE LOOP ME CALTA HAI 
+ORDER BY CASE WHEN name  ='rahul' THEN 1 ELSE 2 END;  --CIRCLE LOOP ME CALTA HAI 
 
 --DISTINCT
 SELECT DISTINCT STATE FROM customers;
